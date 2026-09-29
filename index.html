@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DexEyeGrasp learns dexterous grasping in clutter from FingerEye observations, with geometric self-supervision and residual visual adaptation for sim-to-real transfer.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DexEyeGrasp: Learning Dexterous Grasping in Clutter with FingerEye Observations">
+  <meta property="og:description" content="Seeing from the fingertips. Learning to grasp in clutter.">
+  <meta property="og:image" content="https://dexeyegrasp.github.io/static/images/teaser.webp">
+  <meta property="og:url" content="https://dexeyegrasp.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>DexEyeGrasp — Dexterous Grasping with FingerEye Observations</title>
+  <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="static/js/index.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navigation container" aria-label="Main navigation">
+      <a class="wordmark" href="#top" aria-label="DexEyeGrasp home">Dex<span>Eye</span>Grasp<span class="wordmark-dot" aria-hidden="true">.</span></a>
+      <div class="nav-links">
+        <a href="#project-video">Video</a>
+        <a href="#real-world-videos">Experiments</a>
+        <span class="nav-unavailable" aria-disabled="true" aria-label="Paper: coming soon" title="Paper coming soon">Paper</span>
+        <span class="nav-unavailable" aria-disabled="true" aria-label="Code: coming soon" title="Code coming soon">Code</span>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="project-title">
+      <p class="eyebrow">Dexterous manipulation · Robot learning · Sim-to-real</p>
+      <h1 id="project-title"><span class="project-name">Dex<span>Eye</span>Grasp</span><span class="project-subtitle">Learning Dexterous Grasping in Clutter<br class="desktop-break"> with FingerEye Observations</span></h1>
+      <p class="authors">Anonymous Authors</p>
+      <div class="publication-links" aria-label="Project resources">
+        <span class="pill unavailable" aria-disabled="true" aria-label="Paper: coming soon">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>Paper <span class="soon">coming soon</span>
+        </span>
+        <span class="pill unavailable" aria-label="Code: coming soon">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg>Code <span class="soon">coming soon</span>
+        </span>
+        <a class="pill" href="#project-video">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></svg>Video
+        </a>
+        <a class="pill" href="#bibtex">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 5h5v7H5zM14 5h5v7h-5zM10 12c0 4-2 6-5 7m14-7c0 4-2 6-5 7"/></svg>BibTeX
+        </a>
+      </div>
+      <figure class="teaser">
+        <a class="figure-link" href="static/images/teaser.webp" data-zoom aria-label="Enlarge FingerEye grasping overview">
+          <img src="static/images/teaser.webp" alt="Binocular FingerEye cameras on four fingers observe a highlighted target as the robot initializes, searches, and grasps it in a cluttered box." width="2600" height="496" fetchpriority="high">
+        </a>
+        <figcaption><strong>Seeing from the fingertips. Learning to grasp in clutter.</strong><br>DexEyeGrasp uses articulated FingerEye viewpoints to guide both finger and wrist motion.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section container film-section" id="project-video" aria-labelledby="film-title">
+      <div class="section-heading">
+        <p class="section-kicker">Project video</p>
+        <h2 id="film-title">DexEyeGrasp in three minutes</h2>
+        <p>Our method and real-world experiments, with narration.</p>
+      </div>
+      <figure class="project-film">
+        <video controls playsinline preload="none" poster="static/images/video/project-video.webp" width="1920" height="1080" aria-label="DexEyeGrasp three-minute narrated project video">
+          <source src="static/videos/dexeyegrasp-3min.mp4" type="video/mp4">
+          <track kind="captions" src="static/videos/dexeyegrasp-en.vtt" srclang="en" label="English">
+          <a href="static/videos/dexeyegrasp-3min.mp4">Download the project video</a>.
+        </video>
+        <figcaption class="film-caption"><span>3:00 <span aria-hidden="true">·</span> 1080p <span aria-hidden="true">·</span> English captions</span><a href="static/videos/dexeyegrasp-3min.mp4" download>Download video <span aria-hidden="true">↓</span></a></figcaption>
+      </figure>
+    </section>
+
+    <section class="section abstract-section" id="abstract" aria-labelledby="abstract-title">
+      <div class="reading-width">
+        <p class="section-kicker">The idea</p>
+        <h2 id="abstract-title">Abstract</h2>
+        <p>Dexterous grasping in dense clutter requires precise finger and wrist control under severe occlusion, which can hide the target and spatial cues needed for grasping from third-person cameras. We present <strong>DexEyeGrasp</strong>, a visuomotor learning framework that leverages FingerEye observations to guide both finger and wrist motion. Our framework distills a state-based teacher trained in simulation into a visuomotor student policy that integrates multiple dexterous viewpoints.</p>
+        <p>To help the policy extract task-relevant spatial information, we introduce self-supervised learning objectives that predict current and action-conditioned future camera–target geometry. These objectives encourage geometric awareness for approaching the target and refining contact-rich interactions despite changing visibility. To further address the visual sim-to-real gap, we learn a residual image encoder from real FingerEye trajectory sequences while keeping the simulation-trained network frozen with the aforementioned objectives. Together, these designs support learning and transferring dexterous grasping in densely cluttered environments.</p>
+      </div>
+    </section>
+
+    <section class="section container" id="method" aria-labelledby="method-title">
+      <div class="section-heading">
+        <p class="section-kicker">From simulation to the real world</p>
+        <h2 id="method-title">Learning through dexterous viewpoints</h2>
+        <p>A privileged teacher, a visual student, and a shared geometric learning objective.</p>
+      </div>
+      <figure class="method-figure">
+        <a class="figure-link" href="static/images/method.webp" data-zoom aria-label="Enlarge DexEyeGrasp method diagram">
+          <img src="static/images/method.webp" alt="Method overview: a PPO state-based teacher supervises a FingerEye visual student through DAgger; current and next-step geometry prediction train visual features and a residual encoder for real-world adaptation." width="2400" height="1501" loading="lazy">
+        </a>
+        <figcaption>Overview of DexEyeGrasp. Click any figure to explore it at a larger size.</figcaption>
+      </figure>
+      <div class="method-steps">
+        <article><span class="step-number">01</span><h3>Learn in simulation</h3><p>A recurrent PPO teacher uses privileged state information to learn coordinated arm–hand control in clutter.</p></article>
+        <article><span class="step-number">02</span><h3>See from the hand</h3><p>Online DAgger distills the teacher into a student that combines FingerEye images, attention across views, and proprioception.</p></article>
+        <article><span class="step-number">03</span><h3>Adapt with geometry</h3><p>FE-Targ objectives predict current and future target geometry, then train a residual visual encoder on real trajectories.</p></article>
+      </div>
+      <details class="method-details">
+        <summary>Visual randomization during training <span aria-hidden="true">+</span></summary>
+        <p>Scene appearance and image augmentations vary during simulation training. Magenta overlays identify the target while preserving the surrounding visual context.</p>
+        <a class="figure-link" href="static/images/visual-randomization.webp" data-zoom aria-label="Enlarge visual randomization examples"><img src="static/images/visual-randomization.webp" alt="Randomized simulation environments with scene views, raw FingerEye RGB, and augmented target-mask policy inputs." width="1800" height="776" loading="lazy"></a>
+        <div class="video-gallery simulation-gallery" aria-label="Visual randomization videos">
+          <figure><video controls muted playsinline preload="none" poster="static/images/video/visual-randomization-1.webp" width="1280" height="576" aria-label="Visual randomization example 1"><source src="static/videos/visual-randomization-1.mp4" type="video/mp4"><a href="static/videos/visual-randomization-1.mp4">Download example 1</a></video><figcaption>Randomized environment 1</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" poster="static/images/video/visual-randomization-2.webp" width="1280" height="576" aria-label="Visual randomization example 2"><source src="static/videos/visual-randomization-2.mp4" type="video/mp4"><a href="static/videos/visual-randomization-2.mp4">Download example 2</a></video><figcaption>Randomized environment 2</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" poster="static/images/video/visual-randomization-3.webp" width="1280" height="576" aria-label="Visual randomization example 3"><source src="static/videos/visual-randomization-3.mp4" type="video/mp4"><a href="static/videos/visual-randomization-3.mp4">Download example 3</a></video><figcaption>Randomized environment 3</figcaption></figure>
+          <figure><video controls muted playsinline preload="none" poster="static/images/video/visual-randomization-4.webp" width="1280" height="576" aria-label="Visual randomization example 4"><source src="static/videos/visual-randomization-4.mp4" type="video/mp4"><a href="static/videos/visual-randomization-4.mp4">Download example 4</a></video><figcaption>Randomized environment 4</figcaption></figure>
+        </div>
+        <p class="media-note">Synchronized scene and raw FingerEye observations. Each clip plays once at its recorded speed.</p>
+      </details>
+    </section>
+
+    <section class="section tinted" id="experiments" aria-labelledby="platform-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Experiments</p>
+          <h2 id="platform-title">Experimental platform</h2>
+          <p>The robot, fingertip cameras, and objects used in our real-world experiments.</p>
+        </div>
+        <div class="setup-grid">
+          <div class="setup-copy"><h3>A closer view of contact</h3><p>An xArm7 arm and XHand use binocular FingerEye cameras on four fingertips. The visual policy combines these moving viewpoints with proprioception to control wrist and finger motion.</p><p>A side-view RGB-D camera supports target pose estimation for adaptation data. A residual image encoder learns from approximately 50 real teleoperated trajectories using geometric supervision.</p><p class="setup-note">Real-world control runs at approximately 10 Hz with multi-view target tracking.</p></div>
+          <figure><a class="figure-link" href="static/images/realworld-setup.webp" data-zoom aria-label="Enlarge real-world robot setup"><img src="static/images/realworld-setup.webp" alt="The real xArm7 and XHand setup with FingerEye cameras, a side-view camera, and cluttered workspace." width="1000" height="1338" loading="lazy"></a><figcaption>Robot platform</figcaption></figure>
+          <figure><a class="figure-link" href="static/images/target-objects.webp" data-zoom aria-label="Enlarge real-world target objects"><img src="static/images/target-objects.webp" alt="Collection of real-world target objects with diverse shapes, colors, and materials." width="1200" height="1600" loading="lazy"></a><figcaption>Real-world target objects</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="real-world-videos" aria-labelledby="videos-title">
+      <div class="section-heading">
+        <p class="section-kicker">Real-world experiments</p>
+        <h2 id="videos-title">Real-world videos</h2>
+        <p>Targeted grasping in clutter, with observations from the fingertips.</p>
+      </div>
+      <div class="featured-demo">
+        <div class="demo-heading"><div><h3>FingerEye observations during grasping</h3><p>The same grasp, shown alongside six synchronized fingertip views.</p></div><div class="target-preview"><img src="static/images/video/target-4.webp" width="80" height="80" loading="lazy" alt="Target: orange ball"><span>Target object</span></div></div>
+        <video controls muted playsinline preload="none" poster="static/images/video/fingereye-in-action.webp" width="1280" height="576" aria-label="Real-world grasp with synchronized thumb, middle, and ring FingerEye views"><source src="static/videos/fingereye-in-action.mp4" type="video/mp4"><a href="static/videos/fingereye-in-action.mp4">Download the synchronized grasp</a></video>
+        <div class="finger-legend" aria-label="FingerEye row colors"><span class="finger-thumb">Thumb · top row</span><span class="finger-middle">Middle · middle row</span><span class="finger-ring">Ring · bottom row</span></div>
+      </div>
+      <div class="gallery-heading"><div><h3>Different target objects</h3><p>Six grasping trials. Each target image matches the adjacent video.</p></div><button type="button" class="play-group" data-play-group="target-trials" hidden>Play all six</button></div>
+      <div class="trial-gallery" id="target-trials">
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/target-1.webp" alt="Target: apple" width="72" height="72" loading="lazy"><div><span>Trial 01</span><h4>Apple</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/target-trial-1.webp" width="640" height="480" aria-label="Grasping the apple"><source src="static/videos/target-trial-1.mp4" type="video/mp4"><a href="static/videos/target-trial-1.mp4">Download apple trial</a></video></figure>
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/target-2.webp" alt="Target: carton" width="72" height="72" loading="lazy"><div><span>Trial 02</span><h4>Carton</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/target-trial-2.webp" width="640" height="480" aria-label="Grasping the carton"><source src="static/videos/target-trial-2.mp4" type="video/mp4"><a href="static/videos/target-trial-2.mp4">Download carton trial</a></video></figure>
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/target-3.webp" alt="Target: peach" width="72" height="72" loading="lazy"><div><span>Trial 03</span><h4>Peach</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/target-trial-3.webp" width="640" height="480" aria-label="Grasping the peach"><source src="static/videos/target-trial-3.mp4" type="video/mp4"><a href="static/videos/target-trial-3.mp4">Download peach trial</a></video></figure>
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/target-4.webp" alt="Target: orange ball" width="72" height="72" loading="lazy"><div><span>Trial 04</span><h4>Ball</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/target-trial-4.webp" width="640" height="480" aria-label="Grasping the ball"><source src="static/videos/target-trial-4.mp4" type="video/mp4"><a href="static/videos/target-trial-4.mp4">Download ball trial</a></video></figure>
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/target-5.webp" alt="Target: cup" width="72" height="72" loading="lazy"><div><span>Trial 05</span><h4>Cup</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/target-trial-5.webp" width="640" height="480" aria-label="Grasping the cup"><source src="static/videos/target-trial-5.mp4" type="video/mp4"><a href="static/videos/target-trial-5.mp4">Download cup trial</a></video></figure>
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/target-6.webp" alt="Target: yellow fruit" width="72" height="72" loading="lazy"><div><span>Trial 06</span><h4>Yellow fruit</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/target-trial-6.webp" width="640" height="480" aria-label="Grasping the yellow fruit"><source src="static/videos/target-trial-6.mp4" type="video/mp4"><a href="static/videos/target-trial-6.mp4">Download yellow fruit trial</a></video></figure>
+      </div>
+      <p class="media-note" id="target-trials-status" role="status">Normal-speed clips. Play individually or start all six together. No automatic replay.</p>
+      <div class="gallery-heading"><div><h3>Increasing clutter</h3><p>Grasping examples with 15, 30, 40, and 50 objects in the workspace.</p></div></div>
+      <div class="video-gallery clutter-gallery">
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/clutter-15-target.webp" alt="Target object for the 15-object scene" width="60" height="60" loading="lazy"><div><span>15 objects</span><h4>Clutter 15</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/clutter-15.webp" width="1280" height="720" aria-label="Grasping in clutter with 15 objects"><source src="static/videos/clutter-15.mp4" type="video/mp4"><a href="static/videos/clutter-15.mp4">Download clutter 15</a></video></figure>
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/clutter-30-target.webp" alt="Target object for the 30-object scene" width="60" height="60" loading="lazy"><div><span>30 objects</span><h4>Clutter 30</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/clutter-30.webp" width="1280" height="720" aria-label="Grasping in clutter with 30 objects"><source src="static/videos/clutter-30.mp4" type="video/mp4"><a href="static/videos/clutter-30.mp4">Download clutter 30</a></video></figure>
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/clutter-40-target.webp" alt="Target object for the 40-object scene" width="60" height="60" loading="lazy"><div><span>40 objects</span><h4>Clutter 40</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/clutter-40.webp" width="1280" height="720" aria-label="Grasping in clutter with 40 objects"><source src="static/videos/clutter-40.mp4" type="video/mp4"><a href="static/videos/clutter-40.mp4">Download clutter 40</a></video></figure>
+        <figure class="trial-card"><div class="trial-label"><img src="static/images/video/clutter-50-target.webp" alt="Target object for the 50-object scene" width="60" height="60" loading="lazy"><div><span>50 objects</span><h4>Clutter 50</h4></div></div><video controls muted playsinline preload="none" poster="static/images/video/clutter-50.webp" width="1280" height="720" aria-label="Grasping in clutter with 50 objects"><source src="static/videos/clutter-50.mp4" type="video/mp4"><a href="static/videos/clutter-50.mp4">Download clutter 50</a></video></figure>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="bibtex" aria-labelledby="bibtex-title">
+      <div class="reading-width">
+        <div class="citation-heading"><h2 id="bibtex-title">BibTeX</h2><button class="copy-button" type="button" id="copy-bibtex" hidden><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3"/></svg><span>Copy</span></button></div>
+        <p class="citation-note">Provisional entry for the current anonymous manuscript.</p>
+        <pre><code id="bibtex-content">@misc{dexeyegrasp,
+  title  = {DexEyeGrasp: Learning Dexterous Grasping in Clutter
+            with FingerEye Observations},
+  author = {Anonymous Authors},
+  note   = {Manuscript},
+  url    = {https://dexeyegrasp.github.io/}
+}</code></pre>
+        <p id="copy-status" class="copy-status" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-brand">DexEyeGrasp</p>
+    <p>Website design inspired by <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a>.<br>Website code is available under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Research materials retain their respective rights.</p>
+    <a class="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+  </footer>
+
+  <dialog class="image-dialog" id="image-dialog" aria-label="Enlarged figure">
+    <button type="button" class="dialog-close" aria-label="Close enlarged figure">×</button>
+    <img id="dialog-image" alt="">
+    <p id="dialog-caption"></p>
+  </dialog>
+</body>
+</html>

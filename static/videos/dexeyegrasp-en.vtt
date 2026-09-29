@@ -1,0 +1,189 @@
+WEBVTT
+
+1
+00:00:00.164 --> 00:00:04.413
+We present DexEyeGrasp, a framework for dexterous grasping in clutter using cameras
+
+2
+00:00:04.413 --> 00:00:05.744
+mounted on the fingertips.
+
+3
+00:00:09.775 --> 00:00:10.621
+Introduction.
+
+4
+00:00:11.576 --> 00:00:15.973
+The overview camera initially sees the target, but the approaching hand occludes
+
+5
+00:00:15.973 --> 00:00:16.137
+it.
+
+6
+00:00:16.137 --> 00:00:18.776
+Fingertip views complement this fixed viewpoint.
+
+7
+00:00:20.081 --> 00:00:21.906
+We begin with a global view.
+
+8
+00:00:21.906 --> 00:00:25.752
+Color-coded FingerEye cameras provide dexterous viewpoints.
+
+9
+00:00:25.752 --> 00:00:29.988
+We identify the target, then search through clutter and grasp it.
+
+10
+00:00:31.279 --> 00:00:31.871
+Method.
+
+11
+00:00:33.151 --> 00:00:34.276
+Four training components.
+
+12
+00:00:35.876 --> 00:00:39.399
+First, reinforcement learning trains a privileged state-based teacher.
+
+13
+00:00:40.519 --> 00:00:44.863
+The visual student learns teacher actions from FingerEye images and proprioception.
+
+14
+00:00:46.243 --> 00:00:50.367
+Self-supervised heads train jointly with the visual policy to predict current and
+
+15
+00:00:50.367 --> 00:00:51.436
+next target geometry.
+
+16
+00:00:52.603 --> 00:00:56.832
+Real-image adaptation uses the policy and geometry heads together, training a residual
+
+17
+00:00:56.832 --> 00:00:58.996
+encoder while freezing the original network.
+
+18
+00:01:00.125 --> 00:01:01.477
+Learning in confined clutter.
+
+19
+00:01:02.503 --> 00:01:04.857
+Direct learning in clutter is difficult.
+
+20
+00:01:04.857 --> 00:01:08.917
+Target-grid curricula divide the task among nine specialist teachers.
+
+21
+00:01:08.917 --> 00:01:12.978
+We distill their skills into a unified teacher, then train with fully
+
+22
+00:01:12.978 --> 00:01:14.096
+randomized clutter.
+
+23
+00:01:14.096 --> 00:01:18.216
+Physical randomization improves robustness to objects and controllers.
+
+24
+00:01:19.721 --> 00:01:21.111
+Improving visuomotor learning.
+
+25
+00:01:22.101 --> 00:01:25.248
+The current head estimates the camera-to-target vector.
+
+26
+00:01:25.248 --> 00:01:29.254
+The next head combines FingerEye RGB with the action to predict future
+
+27
+00:01:29.254 --> 00:01:29.769
+geometry.
+
+28
+00:01:31.136 --> 00:01:32.446
+Transferring to the real world.
+
+29
+00:01:33.523 --> 00:01:38.749
+Visual randomization varies backgrounds, lighting, and image quality during student training.
+
+30
+00:01:38.749 --> 00:01:42.963
+These diverse observations prepare the visual policy for real-world scenes.
+
+31
+00:01:44.363 --> 00:01:48.021
+About fifty teleoperated trajectories provide geometric labels.
+
+32
+00:01:48.021 --> 00:01:54.640
+Adaptation corrects real-image features through geometry, without requiring successful demonstrations or imitating
+
+33
+00:01:54.640 --> 00:01:55.394
+the operator.
+
+34
+00:01:56.634 --> 00:01:57.351
+Experiments.
+
+35
+00:01:58.449 --> 00:02:02.302
+We evaluate fifteen and thirty objects, both on a table and inside
+
+36
+00:02:02.302 --> 00:02:02.652
+a box.
+
+37
+00:02:04.357 --> 00:02:06.552
+Success requires lifting the target.
+
+38
+00:02:06.552 --> 00:02:09.296
+SAM two tracks it from an initial manual box.
+
+39
+00:02:10.526 --> 00:02:14.013
+Across ten trials per setting, success reaches nine out of ten with
+
+40
+00:02:14.013 --> 00:02:17.239
+fifteen objects, and eight out of ten with thirty, both on the
+
+41
+00:02:17.239 --> 00:02:18.332
+table and in the box.
+
+42
+00:02:19.844 --> 00:02:23.021
+DexEyeGrasp grasps different target objects in clutter.
+
+43
+00:02:34.195 --> 00:02:36.296
+We also test forty and fifty objects.
+
+44
+00:02:38.119 --> 00:02:43.305
+These denser demonstrations show fingertip feedback during grasping when surrounding objects restrict
+
+45
+00:02:43.305 --> 00:02:44.434
+visibility and access.
+
+46
+00:02:51.732 --> 00:02:57.066
+DexEyeGrasp combines dexterous FingerEye viewpoints, curriculum learning and self-supervision for real-world grasping.
+
+47
+00:02:57.066 --> 00:02:59.462
+More information is available on our project website.
